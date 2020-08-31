@@ -1,0 +1,11 @@
+.footer {
+  background: $ruru-word-d;
+  padding: 0.2rem 0;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  text-align: center;
+  color: $ruru-word-l;
+}
+
+@include media-breakpoint-down(sm) {
+}

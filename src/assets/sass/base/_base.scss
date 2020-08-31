@@ -1,0 +1,65 @@
+html {
+  font-size: 0.8rem;
+  position: relative;
+}
+
+/* ScrollBar */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 0px;
+  background-color: #77625a;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  background-color: #be8b77;
+}
+
+::selection {
+  background: #868686;
+  color: #fff;
+}
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+@include media-breakpoint-up(xl) {
+  html {
+    font-size: 1em;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.wrapper {
+  flex: 1 0 auto;
+  margin-bottom: 6rem;
+}

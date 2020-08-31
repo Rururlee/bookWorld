@@ -1,0 +1,6 @@
+@mixin linkNoStyle{
+  &,&:link,&:visited{
+    text-decoration: none;
+    @content;
+  }
+}

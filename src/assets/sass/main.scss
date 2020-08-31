@@ -1,0 +1,26 @@
+// Abstracts
+@import 'abstract/variables';
+@import './abstract/mixins';
+@import 'abstract/utilities';
+
+// Vendors
+@import 'vendors/bootstrap/scss/bootstrap';
+
+// Layout
+@import 'layout/header';
+@import 'layout/footer';
+
+//pages
+@import 'pages/index';
+@import 'pages/about';
+@import 'pages/contact';
+
+// Base
+@import 'base/base';
+
+//font
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+@font-face {
+  font-family: MyCustomFont;
+  src: url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+}
