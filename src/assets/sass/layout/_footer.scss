@@ -1,9 +1,10 @@
 .footer {
-  background: $ruru-word-d;
+  background: #a68a7f;
   padding: 0.2rem 0;
   font-size: 0.8rem;
-  flex-shrink: 0;
-  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   color: $ruru-word-l;
 }
 

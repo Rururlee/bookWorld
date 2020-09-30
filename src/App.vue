@@ -1,21 +1,49 @@
 <template>
   <div id="app">
     <Menu></Menu>
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>|
-      <router-link to="/ruru">Ruru</router-link>
-    </div> -->
+       <button @click="testGetVuex()">測試 取得 Vuex 實體</button>
+    <!-- <h5 v-for="item in bookList" :key="item.bookId">{{ item.title }}</h5> -->
     <!-- component內容會顯示在router-view -->
     <router-view />
+    <Footer></Footer>
   </div>
 </template>
 <script>
+
 import Menu from '@/components/Menu.vue'
+import Footer from '@/components/Footer.vue'
+// import { apiGetBookList } from '@/apis/book.js'
+
+
 export default {
+  name: 'app',
   components: {
-    Menu
-  }
+    Menu,
+    Footer,
+  },
+  data() {
+    return {
+      // bookList: null,
+    }
+  },
+  // created() {
+  //   this.axios
+  //     .get('https://ruru-read.firebaseio.com/booklist.json')
+  //     .then((res) => this.bookList = res.data)
+  //     .catch((err) => console.log(err))
+  // }
+  created() {
+    // apiGetBookList({}).then((res) => {
+    //   console.log(res.data)
+    //   this.bookList = res.data
+    // })
+  },
+  methods: {
+        testGetVuex() {
+            // 透過 testGetVuex 事件 來呼叫 Vuex
+            console.log(this.$store);
+        }
+    }
 }
 </script>
 <style>

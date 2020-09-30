@@ -9,7 +9,6 @@ export default new Vuex.Store({
   strict:true,
   // state有getter可使用
   state: {
-    day: 0,
     header: {
       title: '這是測試vuex'
     },
@@ -24,7 +23,7 @@ export default new Vuex.Store({
   // 處理api，非同步的處理
   actions: {
     GETLIST(context) {
-      // console.log(context) // 可以context有很多項東西，但不要改，這邊只是看有什麼東西而已
+       console.log('context',context) // 可以context有很多項東西，但不要改，這邊只是看有什麼東西而已
       return axios.get('https://ruru-read.firebaseio.com/booklist.json').then(res => {
         context.commit('SETLIST', res.data)
       })

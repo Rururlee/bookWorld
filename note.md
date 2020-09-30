@@ -28,3 +28,6 @@
     * 這種自製事件->document.addEventListener('click',abc)，
     如果是v-on這種事件，vue會自動幫我們在beforeDestroy時移除
     * document.removeEventListener('click',abc)
+
+## vuex
+> state:儲存狀態
