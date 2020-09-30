@@ -31,6 +31,12 @@
 
 ## vuex
 ![Vuex](vuex.png)
-> * state: 儲存狀態
-> * actions: 組件需要更動狀態時，需要透過 Actions 發出一個 Commit 去呼叫 Mutations
-> * 
+> state<br>
+> * 儲存狀態
+
+> actions<br>
+> * 組件需要更動狀態時，需要透過actions發出一個commit去呼叫mutations
+
+> mutations:<br>
+> * 收到actions的資料，去更動state的狀態，mutate本身單字的意思是就是「變異」，如其名就是拿來變動state用的
+> * 如果mutations要做更改，不可以變動在State還沒定義的data
