@@ -6,29 +6,29 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   // 嚴格模式，開發階段建議開啟，上線時要關閉不然會耗資源
-  strict:true,
+  strict: true,
   // state有getter可使用
   state: {
-    header: {
-      title: '這是測試vuex'
-    },
     bookList: []
   },
   // mutations可直接改動state。這裡改了devtools才會變
   mutations: {
-    SETLIST(state, list) { 
+    SETLIST(state, list) {
+      console.log('mutation run') 
       state.bookList = list
     },
   },
   // 處理api，非同步的處理
   actions: {
+    // 要去組件啟動 GETLIST
     GETLIST(context) {
-       console.log('context',context) // 可以context有很多項東西，但不要改，這邊只是看有什麼東西而已
+      // console.log('context', context) // 可以context有很多項東西，但不要改，這邊只是看有什麼東西而已
       return axios.get('https://ruru-read.firebaseio.com/booklist.json').then(res => {
+        console.log('index.js SETLIST')
         context.commit('SETLIST', res.data)
+      }).catch(err => {
+        console.log(err)
       })
-
-
     }
   },
   modules: {

@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <Menu></Menu>
-       <button @click="testGetVuex()">測試 取得 Vuex 實體</button>
+    <h5 v-for="item in stateData" :key="item.bookId">{{ item.title }}</h5>
+    <button @click="getStateData()">測試 取得 Vuex 實體</button>
     <!-- <h5 v-for="item in bookList" :key="item.bookId">{{ item.title }}</h5> -->
     <!-- component內容會顯示在router-view -->
     <router-view />
@@ -9,11 +10,9 @@
   </div>
 </template>
 <script>
-
 import Menu from '@/components/Menu.vue'
 import Footer from '@/components/Footer.vue'
 // import { apiGetBookList } from '@/apis/book.js'
-
 
 export default {
   name: 'app',
@@ -23,8 +22,12 @@ export default {
   },
   data() {
     return {
-      // bookList: null,
+      bookList: null,
     }
+  },
+  mounted() {
+    // 1.  頁面讀取完成時，吃 booklist API
+    this.$store.dispatch('GETLIST')
   },
   // created() {
   //   this.axios
@@ -38,12 +41,20 @@ export default {
     //   this.bookList = res.data
     // })
   },
+  computed: {
+    stateData() {
+      console.log('this.$store.state.bookList', this.$store.state.bookList)
+      return this.$store.state.bookList
+    },
+  },
   methods: {
-        testGetVuex() {
-            // 透過 testGetVuex 事件 來呼叫 Vuex
-            console.log(this.$store);
-        }
-    }
+    getStateData() {
+      // console.log(this.$store);
+      console.log('app.vue SETLIST')
+      this.$store.commit('SETLIST')
+      this.$store.dispatch('GETLIST')
+    },
+  },
 }
 </script>
 <style>

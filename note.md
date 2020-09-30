@@ -37,7 +37,12 @@
 
 ### actions
     * 組件需要更動狀態時，需要透過actions發出一個commit去呼叫mutations
+    * actions不能直接修改state，只有mutations可以更改state
+    * 可作非同步的操作
+    * 可以用 context.dispatch 來呼叫另外一個 actions
+    * actions裡面可以commit多個mutations，也可以dispatch多個actions
 
 ### mutations
     * 收到actions的資料，去更動state的狀態，mutate本身單字的意思是就是「變異」，如其名就是拿來變動state用的
     * 如果mutations要做更改，不可以變動在State還沒定義的data
+    *  只能做同步的操作
