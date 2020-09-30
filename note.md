@@ -30,4 +30,7 @@
     * document.removeEventListener('click',abc)
 
 ## vuex
-> state:儲存狀態
+![Vuex](vuex.png)
+> * state: 儲存狀態
+> * actions: 組件需要更動狀態時，需要透過 Actions 發出一個 Commit 去呼叫 Mutations
+> * 
