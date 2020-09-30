@@ -14,7 +14,7 @@ export default new Vuex.Store({
   // mutations可直接改動state。這裡改了devtools才會變
   mutations: {
     SETLIST(state, list) {
-      console.log('mutation run') 
+      console.log('mutation run')
       state.bookList = list
     },
   },

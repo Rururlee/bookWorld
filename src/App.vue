@@ -3,7 +3,6 @@
     <Menu></Menu>
     <h5 v-for="item in stateData" :key="item.bookId">{{ item.title }}</h5>
     <button @click="getStateData()">測試 取得 Vuex 實體</button>
-    <!-- <h5 v-for="item in bookList" :key="item.bookId">{{ item.title }}</h5> -->
     <!-- component內容會顯示在router-view -->
     <router-view />
     <Footer></Footer>
@@ -12,7 +11,6 @@
 <script>
 import Menu from '@/components/Menu.vue'
 import Footer from '@/components/Footer.vue'
-// import { apiGetBookList } from '@/apis/book.js'
 
 export default {
   name: 'app',
@@ -29,27 +27,14 @@ export default {
     // 1.  頁面讀取完成時，吃 booklist API
     this.$store.dispatch('GETLIST')
   },
-  // created() {
-  //   this.axios
-  //     .get('https://ruru-read.firebaseio.com/booklist.json')
-  //     .then((res) => this.bookList = res.data)
-  //     .catch((err) => console.log(err))
-  // }
-  created() {
-    // apiGetBookList({}).then((res) => {
-    //   console.log(res.data)
-    //   this.bookList = res.data
-    // })
-  },
   computed: {
     stateData() {
-      console.log('this.$store.state.bookList', this.$store.state.bookList)
+      // console.log('this.$store.state.bookList', this.$store.state.bookList)
       return this.$store.state.bookList
     },
   },
   methods: {
     getStateData() {
-      // console.log(this.$store);
       console.log('app.vue SETLIST')
       this.$store.commit('SETLIST')
       this.$store.dispatch('GETLIST')
